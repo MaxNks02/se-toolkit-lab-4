@@ -36,3 +36,4 @@ def test_filter_excludes_interaction_with_different_learner_id() -> None:
 
     # Assert: We expect 1 interaction to be found
     assert len(result) == 1
+
