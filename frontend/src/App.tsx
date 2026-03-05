@@ -8,6 +8,7 @@ interface Item {
   type: string
   title: string
   created_at: string
+  description: string
 }
 
 function App() {
@@ -87,26 +88,30 @@ function App() {
       {error && <p>Error: {error}</p>}
 
       {!loading && !error && (
-        <table>
-          <thead>
+          <table>
+            <thead>
             <tr>
               <th>ID</th>
               <th>Type</th>
               <th>Title</th>
               <th>Created at</th>
+              <th>Description</th>
+              {/* 1. Add this header */}
             </tr>
-          </thead>
-          <tbody>
+            </thead>
+            <tbody>
             {items.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.type}</td>
-                <td>{item.title}</td>
-                <td>{item.created_at}</td>
-              </tr>
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.type}</td>
+                  <td>{item.title}</td>
+                  <td>{item.created_at}</td>
+                  <td>{item.description}</td>
+                  {/* 2. Add this data cell */}
+                </tr>
             ))}
-          </tbody>
-        </table>
+            </tbody>
+          </table>
       )}
     </div>
   )
